@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      /* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #131921;
+    color: white;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header .nav-address {
+    display: flex;
+    align-items: center;
+}
+
+header .nav-address p.add-first {
+    font-size: 0.9rem;
+}
+header .nav-right {
+            display: flex;
+            align-items: center;
+            margin-left: auto; /* Push to the right */
+        }
+
+        header .nav-right a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px; /* Space between icon and text */
+            color: white; /* White text color */
+            font-size: 1rem;
+            font-weight: bold
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background-color: #37475a; /* Slightly lighter background */
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            margin: 0 10px; /* Spacing between links */
+        }
+
+        header .nav-right a:hover {
+            background-color: #f8a100; /* Highlight background on hover */
+            color: black; /* Text color changes to black on hover */
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+        header .nav-search select {
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+header .nav-address .add-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+header .nav-address .add-icon i {
+    margin-right: 10px;
+}
+header.nav-address p{
+margin: 5px 0;
+}
+
+header .nav-search select {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+header .nav {
+    display: flex;
+    align-items: center;
+}
+
+header .nav .cart {
+    position: relative;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+header .nav .cart img {
+    width: 50px;
+    height: auto;
+}
+
+header .nav .cart .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #0073e6;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+
+/* Footer */
+footer {
+    background-color: #232f3e;
+    color: white;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.foot-panel1 {
+    text-align: center;
+    padding: 10px;
+    background-color: #37475a;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+.foot-panel2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.foot-panel2 ul {
+    list-style: none;
+    margin: 10px;
+}
+
+.foot-panel2 ul li {
+    margin: 5px 0;
+}
+
+.foot-panel2 ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.foot-panel2 ul a:hover {
+    text-decoration: underline;
+}
+
+.foot-panel4 {
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+.foot-panel4 a {
+    color: #ddd;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.foot-panel4 a:hover {
+    text-decoration: underline;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis - Book Prices</title>
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="/static/symb1.png" alt="Logo">
+        <h1>Amazon Top 50 Books</h1>
+    </div>
+    <div class="nav-right">
+        <a href="/analysis">
+            <i class="fas fa-chart-line"></i> Analysis
+        </a>
+        <a href="/add-book">
+            <i class="fas fa-plus-circle"></i> Add Book
+       </a>
+    </div>
+    <div class="nav-address">
+            <p class="add-first">Deliver to</p>
+            <div class="add-icon">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                <p class="add-second">India</p>
+            </div>
+<div class="nav-search">
+            <select class="search-select">
+                <option selected="selected">All</option>
+                <option>Arts &amp; Crafts</option>
+                <option>Automotive</option>
+                <option>Baby</option>
+                <option>Beauty &amp; Personal Care</option>
+                <option>Books</option>
+                <option>Boys' Fashion</option>
+                <option>Computers</option>
+                <option>Deals</option>
+                <option>Digital Music</option>
+                <option>Electronics</option>
+                <option>Girls' Fashion</option>
+                <option>Health &amp; Household</option>
+                <option>Home &amp; Kitchen</option>
+                <option>Industrial &amp; Scientific</option>
+                <option>Kindle Store</option>
+                <option>Luggage</option>
+                <option>Men's Fashion</option>
+                <option>Movies &amp; TV</option>
+                <option>Music, CDs &amp; Vinyl</option>
+                <option>Pet Supplies</option>
+                <option>Prime Video</option>
+                <option>Software</option>
+                <option>Sports &amp; Outdoors</option>
+                <option>Tools &amp; Home Improvement</option>
+                <option>Toys &amp; Games</option>
+                <option>Video Games</option>
+                <option>Women's Fashion</option>
+            </select>
+
+        </div>
+    <div class="nav">
+       <div class="cart" onclick="window.location.href='cart'">
+    <!-- Cart Icon Image -->
+
+</div>
+
+        <a href="/logout">Logout</a>
+    </div>
+    </div>
+</header>
+    <header>
+        <h1>Book Prices Analysis</h1>
+    </header>
+
+    <!-- Container for the graph -->
+    <div id="graph"></div>
+
+    <script type="text/javascript">
+        var graphData = {{ graph_json | safe }};
+        Plotly.newPlot('graph', graphData);
+    </script>
+
+    <footer>
+
+        <footer>
+        <div class="foot-panel1">
+    <button onclick="scrollToTop()" class="back-to-top-btn">Back to Top</button>
+        </div>
+
+
+       <script>
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+        <div class="foot-panel2">
+            <ul>
+                <li>Get to Know Us</li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Amazon Newsletter</a></li>
+                <li><a href="#">About Amazon</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Sustainability</a></li>
+                <li><a href="#">Press Center</a></li>
+                <li><a href="#">Investor Relations</a>
+                <li><a href="#">Amazon Science</a></li>
+                </ul>
+                <ul>
+                    <li>Make Money with Us</li>
+                    <li><a href="#">Sell products on Amazon</a></li>
+                    <li><a href="#">Sell on Amazon Business</a></li>
+                    <li><a href="#">Sell apps on Amazon</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                    <li><a href="#">Self-Publish with Us</a></li>
+                    <li><a href="#">Host an Amazon Hub</a></li>
+                    <li><a href="#">See More Make Money with Us</a></li>
+                </ul>
+                <ul>
+                    <li>Amazon Payment Products</li>
+                    <li><a href="#">Amzon Business Card</a></li>
+                    <li><a href="#">Shop with Points</a></li>
+                    <li><a href="#">Reload Your Balance</a></li>
+                    <li><a href="#">Amazon Currency Converter</a></li>
+                </ul>
+                <ul>
+                    <li>Let Us Help You</li>
+                    <li><a href="#">Amazon and COVID-19</a></li>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Return & Replacements</a></li>
+                    <li><a href="#">Manage Your Content and Devices</a></li>
+                    <li><a href="#">Amazon Assistant</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+
+            <div class="foot-panel3">
+                <div class="logo">
+
+                </div>
+            </div>
+
+            <div class="foot-panel4">
+                <div class="pages">
+                    <a href="#">Conditions of Use</a>
+                    <a href="#">Privacy Notice</a>
+                    <a href="#">Your Ads Privacy Choices</a>
+                </div>
+                <div class="copyright">
+                    © 1996-2023, Amazon.com, Inc. or its affiliates
+                </div>
+            </div>
+        </footer>
+    </footer>
+</body>
+</html>
