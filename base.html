@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Website{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">Book Analysis</h1>
+            <nav>
+                <ul class="nav-links">
+                   <a href="/home" class="navbar-item {% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="/index" class="navbar-item {% if request.path == '/help' %}active{% endif %}">index</a>
+            <a href="/login" class="navbar-item {% if request.path == '/add_data' %}active{% endif %}">login</a>
+            <a href="/edit_book" class="navbar-item {% if request.path == '/graphs' %}active{% endif %}">edit_book</a>
+            <a href="/dashboard" class="navbar-item {% if request.path == '/explore' %}active{% endif %}">dashboard</a>
+            <a href="/cart" class="navbar-item {% if request.path == '/about_us' %}active{% endif %}">cart</a>
+            <a href="/add_book" class="navbar-item {% if request.path == '/about_us' %}active{% endif %}">add book</a>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        <!-- Content will go here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Book Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
