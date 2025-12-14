@@ -128,16 +128,4 @@ The **Analysis** page visualizes book prices using an interactive **Plotly bar c
 * Recommendation system for books
 * Deploy on cloud platform (AWS / Render / Railway)
 
----
 
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
----
-
-## 👤 Author
-
-**Ganashree C N**
-
-⭐ If you like this project, don’t forget to star the repository!
